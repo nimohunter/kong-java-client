@@ -15,8 +15,8 @@ import java.util.Date;
  */
 public class BaseTest {
 
-	public static final String KONG_ADMIN_URL = "http://test.com:8001";
-	public static final String KONG_API_URL = "https://test.com:8443";
+	public static final String KONG_ADMIN_URL = "http://9.134.243.214:8001";
+	public static final String KONG_API_URL = "http://9.134.243.214:8000";
 
 	protected static KongClient kongClient;
 
@@ -25,7 +25,7 @@ public class BaseTest {
 	@Before
 	public void before() {
 
-		kongClient = new KongClient(KONG_ADMIN_URL, KONG_API_URL, true);
+		kongClient = new KongClient(KONG_ADMIN_URL, KONG_API_URL);
 
 		gson = new GsonBuilder()
 //				.excludeFieldsWithoutExposeAnnotation() 	//不导出实体中没有用@Expose注解的属性
